@@ -11,13 +11,18 @@ Friendly scraper tries to answer some of the challenges above by first providing
 1. Provide the link of the webpage
 2. Show the number of Links of Images, Videos and other pages, Lists, Headings, Paragraphs, and Tables in that page are shown.
 3. If requested then some number of the above parts of the websites are populated 
-4. Classes and Ids used in the tags are shown
-5. Option to filter the text data through the tags, classes and Ids are provided. 
-6. The cheerio command to scrape using the above selectors are provided.
 
 Here is some live examples
 ![](businessNews.gif)
 
 Here is another from Ycombinator
 ![](youCombinator.gif)
+
+Following features to be implemented
+4. Making a graph out of the responses
+5. Classes and Ids used in the tags are shown
+6. Option to filter the text data through the tags, classes and Ids are provided. 
+7. The cheerio command to scrape using the above selectors are provided.
+8. Accept the URL in http or https or www. format
+
 Have a great time getting the information from the Interwebs. 

@@ -4,7 +4,7 @@
   "description": "Webpage scraper that is friendly",
   "main": "mainServer.js",
   "scripts": {
-    "start":"node mainServer.js",
+    "start": "node mainServer.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -31,6 +31,7 @@
     "nedb": "^1.8.0",
     "nodemon": "^2.0.20",
     "pretty": "^2.0.0",
-    "request": "^2.88.2"
+    "request": "^2.88.2",
+    "url-join": "^5.0.0"
   }
 }

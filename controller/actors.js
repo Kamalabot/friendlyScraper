@@ -3,10 +3,20 @@ const {database,siteData,tableData} = require('../db/connect');
 const cheerio = require('cheerio');
 const request = require('request');
 
+
+const urlCorrector = (url) =>{
+    const urlFilter = new RegExp("^(http:\/\/|https:\/\/)?(www\.)?([a-zA-Z0-9-_\.]+\.[a-zA-Z]+)")
+    const matcher = url.match(urlFilter)[3]
+    // console.log(matcher)
+    const builtURL = `http://www.${matcher}`
+    return builtURL
+}
+
 const showOverview = (req,res) =>{
+    // console.log(req.query.url)
     const url = req.query.url;
     // Execute the HTTP Request
-    console.log(url)
+    // console.log(url)
     request(url, loadOverview)
 
         // Callback for when the request is complete
@@ -56,7 +66,7 @@ const showHistory = (req,res) =>{
 const scrapePage = (req,res) =>{
     const url = req.query.url;
     // Execute the HTTP Request
-    console.log(url)
+    // console.log(url)
     request(url, getFullpage)
 
         // Callback for when the request is complete
@@ -112,7 +122,7 @@ cheerioTableParser = require('cheerio-tableparser');
 const scrapeTableBody= (req,res) =>{
     const url = req.query.url;
     // Execute the HTTP Request
-    console.log(url)
+    // console.log(url)
     request(url, getFullpage)
         // Callback for when the request is complete
     function getFullpage(error, response, body) {
@@ -136,6 +146,30 @@ const scrapeTableBody= (req,res) =>{
     }
 }
 
+// const idCollector = (text)=>{
+//     let collector = /<[a-z]+[^>]+id\s*=\s*['"]([^'"]+)['"][^>]*>/g
+//     var locRes = collector.exec(text);
+//     var ids = [];
+    
+//     while(locRes != null){
+//         ids.push(locRes[1])
+//         locRes = collector.exec(text)
+//     }
+//     return ids
+// }
+
+// const classCollector = (text)=>{
+//     let collector = /<[a-z]+[^>]+class\s*=\s*['"]([^'"]+)['"][^>]*>/gm
+//     var locRes = collector.exec(text);
+//     var ids = [];
+    
+//     while(locRes != null){
+//         ids.push(locRes[1])
+//         locRes = collector.exec(text)
+//     }
+//     return ids
+// }
+
 const scrapeTester = (req,res) =>{
     const url = req.query.url;
     // Execute the HTTP Request
@@ -145,29 +179,32 @@ const scrapeTester = (req,res) =>{
         // Callback for when the request is complete
     function getFullpage(error, response, body) {
         // Check for errors
+        // console.log(body)
         if (!error && response.statusCode == 200) {
-            // The raw HTML is in body
-            $ = cheerio.load(body)    
-            
-            let itemBody = $('tbody>tr>td');
-            let parsedBody = [];
-            itemBody.each((i, elem) => {
-                parsedBody.push($(elem).text());
-            });
-            const reply ={
-                url: url,
-                bodies: parsedBody
+            $ = cheerio.load(body)
+
+            let items = $('*');
+            let classes = []
+            let ids = []
+            for (let ite of items){
+                let tem = $(ite).attr()
+                if(tem.class != undefined){
+                    classes.push(tem.class)
+                }
+                if(tem.id != undefined){
+                    ids.push(tem.id)
+                }
             }
 
-            if(reply){
-                tableData.insert(reply)
-                return res.status(200).json({success:true,data:reply})
+            if(classes && ids){
+                return res.status(200).json({success:true,classes:classes,ids:ids})
             } else {
                 return res.status(404).json({success:false,msg:'Something went wrong'})
             }
         }
     }
 }
+
 
 const collectSelectors = (req,res) =>{
     res.send('Collection Selectors.')
