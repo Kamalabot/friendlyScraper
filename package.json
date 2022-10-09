@@ -4,6 +4,7 @@
   "description": "Webpage scraper that is friendly",
   "main": "mainServer.js",
   "scripts": {
+    "start":"node mainServer.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
