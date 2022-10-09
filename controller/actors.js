@@ -41,6 +41,7 @@ const showOverview = (req,res) =>{
     }
 }
 
+
 const showHistory = (req,res) =>{
     database.find({},(err,data)=>{
         if(err){
@@ -104,6 +105,37 @@ const scrapePage = (req,res) =>{
     }
 }
 
+
+
+cheerioTableParser = require('cheerio-tableparser');
+
+const scrapeTableBody= (req,res) =>{
+    const url = req.query.url;
+    // Execute the HTTP Request
+    console.log(url)
+    request(url, getFullpage)
+        // Callback for when the request is complete
+    function getFullpage(error, response, body) {
+        // Check for errors
+        if (!error && response.statusCode == 200) {
+            $ = cheerio.load(body)
+            cheerioTableParser($)
+            const data = $('table').parsetable(true,true,true)
+            console.log(data.length)
+            const reply ={
+                url: url,
+                bodies: data
+            }
+            if(reply){
+                tableData.insert(reply)
+                res.json({success:true,pack:data})
+            }else{
+                return res.status(404).json({success:false,msg:'Something went wrong'})
+            }
+        }
+    }
+}
+
 const scrapeTester = (req,res) =>{
     const url = req.query.url;
     // Execute the HTTP Request
@@ -131,35 +163,6 @@ const scrapeTester = (req,res) =>{
                 tableData.insert(reply)
                 return res.status(200).json({success:true,data:reply})
             } else {
-                return res.status(404).json({success:false,msg:'Something went wrong'})
-            }
-        }
-    }
-}
-
-cheerioTableParser = require('cheerio-tableparser');
-
-const scrapeTableBody= (req,res) =>{
-    const url = req.query.url;
-    // Execute the HTTP Request
-    console.log(url)
-    request(url, getFullpage)
-        // Callback for when the request is complete
-    function getFullpage(error, response, body) {
-        // Check for errors
-        if (!error && response.statusCode == 200) {
-            $ = cheerio.load(body)
-            cheerioTableParser($)
-            const data = $('table').parsetable(true,true,true)
-            console.log(data.length)
-            const reply ={
-                url: url,
-                bodies: data
-            }
-            if(reply){
-                tableData.insert(reply)
-                res.json({success:true,pack:data})
-            }else{
                 return res.status(404).json({success:false,msg:'Something went wrong'})
             }
         }
