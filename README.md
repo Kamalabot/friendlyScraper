@@ -13,6 +13,11 @@ Friendly scraper tries to answer some of the challenges above by first providing
 3. If requested then some number of the above parts of the websites are populated 
 4. Classes and Ids used in the tags are shown
 5. Option to filter the text data through the tags, classes and Ids are provided. 
-6. The cheerio command to scrape using the above selectors are provided. 
+6. The cheerio command to scrape using the above selectors are provided.
 
+Here is some live examples
+![](businessNews.gif)
+
+Here is another from Ycombinator
+![](youCombinator.gif)
 Have a great time getting the information from the Interwebs. 
