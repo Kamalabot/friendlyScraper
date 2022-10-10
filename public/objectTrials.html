@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Friendly Scraper</title>
+    <link rel="stylesheet" href="tachyons.min.css">
+    <script src="./p5.js"></script>
+</head>
+
+<body class="helvetica pa1 bg-lightest-green">
+  <div class="pa5 tc green f2" id="local">
+    <h1 class="tc">Friendly Web Scraper</h1>
+  </div>
+  <div class="fl w-100 f4 tl flex flex-wrap">
+    <div class="w-50 fl pa2 shadow-2 tc">
+      <span>Enter URL: </span><input type="item" id="linkScrape"/>
+      <button id="showLink" class="pa2 ma2">Show Overview</button>
+      <button id="scrape" class="pa2 ma2">Scrape</button>
+    </div>
+    <div class="w-50 fl pa2 flex" id="dataOut"></div>
+    <h3 class="tl">Recieved Data. Select Options below.</h3>
+    <div class="w-100 fl pa2 flex-wrap flex" id="elemOut">
+  
+    </div>
+    <div class="w-100 fl pa2 flex flex-wrap" id="textOut"></div>
+  </div>
+  <script src="objectTrials.js"></script>
+</body>
+</html>

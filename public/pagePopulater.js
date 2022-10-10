@@ -22,27 +22,58 @@ function setup(){
     showLink.mouseClicked(getOverview)
     scrape.mouseClicked(getFullpage)
 
-    createElement('div').parent('elemOut').id('chlk').class('pa2 tl f3')
-    createElement('div').parent('elemOut').id('chsp').class('pa2 tl f3')
-    createElement('div').parent('elemOut').id('chpa').class('pa2 tl f3')
-    createElement('div').parent('elemOut').id('chli').class('pa2 tl f3')
-    createElement('div').parent('elemOut').id('chtb').class('pa2 tl f3')
-
-    spans = createCheckbox('Spans', false).parent('chsp').hide();
-    spans.changed(spanChecked);
+    var divIds = ['chlk','chsp','chpa','chli','chtb']
+    for(let ids of divIds){
+        createDataElement('div','',ids,'ma2 pa2 tl f3 tc','elemOut','visible')
+    }
+    // createElement('div').parent('elemOut').id('chlk').class('pa2 tl f3')
+    // createElement('div').parent('elemOut').id('chsp').class('pa2 tl f3')
+    // createElement('div').parent('elemOut').id('chpa').class('pa2 tl f3')
+    // createElement('div').parent('elemOut').id('chli').class('pa2 tl f3')
+    // createElement('div').parent('elemOut').id('chtb').class('pa2 tl f3')
+    var tagTypes = ['Links','Spans','Paras','Lists','Tables']
     
-    paras = createCheckbox('Paras', false).parent('chpa').hide();
-    paras.changed(paraChecked);
+    var callBacks = [linksChecked,spanChecked,paraChecked,listChecked,tableChecked]
+    var checkBoxes = [];
+    for(let i = 0; i <= divIds.length - 1;i++){
+        console.log(tagTypes[i],divIds[i])
+        checkBoxes.push(createCheckbox(tagTypes[i], false).parent(divIds[i]).hide())
+    }
+
+    for(let i = 0; i <= divIds.length - 1;i++){
+        // console.log(checkBoxes[i],callBacks[i])
+        checkBoxes[i].changed(callBacks[i])
+    }
+    // // spans = createCheckbox('Spans', false).parent('chsp').hide();
+    // spans.changed();
     
-    lists = createCheckbox('Lists', false).parent('chli').hide();
-    lists.changed(listChecked);
+    // // paras = createCheckbox('Paras', false).parent('chpa').hide();
+    // paras.changed();
+    
+    // // lists = createCheckbox('Lists', false).parent('chli').hide();
+    // lists.changed();
 
-    tables = createCheckbox('Tables', false).parent('chtb').hide();
-    tables.changed(tableChecked);
+    // // tables = createCheckbox('Tables', false).parent('chtb').hide();
+    // tables.changed();
 
-    links = createCheckbox('Links', false).parent('chlk').hide();
-    links.changed(linksChecked);
+    // // links = createCheckbox('Links', false).parent('chlk').hide();
+    // links.changed();
 }
+
+
+function createDataElement(elt, text, id, className, parentId, visibility){
+    let parentElement = document.getElementById(parentId);
+    let htmlbuilt = `<${elt} id="${id}" class="${className}" visibility="${visibility}">${text}</${elt}>`;
+    parentElement.innerHTML += htmlbuilt
+}
+
+function createInputElement(type, name, featureName, id, className, parentId, visibility, value){
+    let parentElement = document.getElementById(parentId);
+    let htmlbuilt = `<input type="${type}" id="${id}" visibility="${visibility}" name="${name}">
+        <label for="${name}" class="${className}">${featureName}</label>`;
+    parentElement.innerHTML += htmlbuilt
+}
+
 
 
 function getOverview(){

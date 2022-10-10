@@ -19,12 +19,6 @@ Here is another from Ycombinator
 ![](youCombinator.gif)
 
 Following features to be implemented
-4. Making a chart or visuals out of the responses
-5. Classes and Ids used in the tags are shown
-6. Option to filter the text data through the tags, classes and Ids are provided. 
-7. The cheerio command to scrape using the above selectors are provided.
-8. Accept the URL in http or https or www. format
-9. Implement Axios instead of request for fetching the data
-10. Provide options to search the database or histroy of searches and allow to return the parts of page for multiple links.
+Refer the issues...
 
 Have a great time getting the information from the Interwebs. 
