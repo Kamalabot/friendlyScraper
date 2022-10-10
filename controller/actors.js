@@ -1,4 +1,4 @@
-const {database,siteData,tableData} = require('../db/connect');
+const {database,siteData,tableData,selectorsData} = require('../db/connect');
 
 const cheerio = require('cheerio');
 const request = require('request');
@@ -115,8 +115,6 @@ const scrapePage = (req,res) =>{
     }
 }
 
-
-
 cheerioTableParser = require('cheerio-tableparser');
 
 const scrapeTableBody= (req,res) =>{
@@ -170,7 +168,35 @@ const scrapeTableBody= (req,res) =>{
 //     return ids
 // }
 
-const scrapeTester = (req,res) =>{
+const axios = require('axios')
+
+const scrapeTester = async (req,res) =>{
+    const url = req.query.url;
+    // Execute the HTTP Request
+    console.log(url)
+    let options = {
+        headers: { 'User-Agent': 'Mozilla/5.0 (iPad; CPU OS 11_0 like Mac OS X) AppleWebKit/604.1.34 (KHTML, like Gecko) Version/11.0 Mobile/15A5341f Safari/604.1' }
+    }
+    const { data } = await axios.get(url,options);
+    console.log(data)
+    $ = cheerio.load(data);
+    let itemsP = $("p");
+    let paraItem = [];
+    for (let p in itemsP){
+        paraItem.push($(p).text())
+    }
+    console.log(paraItem)
+    if(paraItem){
+        let reply = {para:paraItem}
+        return res.status(200).json({success:true,reply})
+    } else{
+        return res.status(404).json({success:false,msg:'Something went wrong'})
+    }
+
+}
+
+
+const collectSelectors = (req,res) =>{
     const url = req.query.url;
     // Execute the HTTP Request
     console.log(url)
@@ -197,17 +223,14 @@ const scrapeTester = (req,res) =>{
             }
 
             if(classes && ids){
+                var reply = {url: url, classes:classes,ids:ids}
+                selectorsData.insert(reply)
                 return res.status(200).json({success:true,classes:classes,ids:ids})
             } else {
                 return res.status(404).json({success:false,msg:'Something went wrong'})
             }
         }
     }
-}
-
-
-const collectSelectors = (req,res) =>{
-    res.send('Collection Selectors.')
 }
 
 module.exports = {showOverview,showHistory,scrapePage,collectSelectors,scrapeTableBody,scrapeTester}

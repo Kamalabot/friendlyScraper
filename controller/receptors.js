@@ -1,4 +1,4 @@
-const {siteData,tableData} = require('../db/connect');
+const {siteData,tableData,selectorsData,database} = require('../db/connect');
 
 const loadLinks= (req,res) =>{
     const url = req.query.url;
