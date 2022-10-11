@@ -20,27 +20,30 @@ const urlExtractor =  async (url) => {
     let options = {
         headers: { 'User-Agent': 'Mozilla/5.0 (iPad; CPU OS 11_0 like Mac OS X) AppleWebKit/604.1.34 (KHTML, like Gecko) Version/11.0 Mobile/15A5341f Safari/604.1' }
     }
+    try{
+        const { data } = await axios.get(url,options);
+    
+        const textData = processHtml(data);
 
+        const regex = /(?<=\s)[\w/\-\_]+(?=\s*)/g;
     
-    const { data } = await axios.get(url,options);
-       // Load HTML we fetched in the previous line
-    const textData = processHtml(data);
+        const processedText = [];
 
-    const regex = /(?<=\s)[\w/\-\_]+(?=\s*)/g;
+        var locRes = regex.exec(textData);
     
-    const processedText = [];
-    // The result can be accessed through the `m`-variable.
+        while(locRes != null){
+            processedText.push(locRes[0])
+            locRes = regex.exec(textData)
+        }
+        
+        let joinedText = processedText.join(' ');
     
-    var locRes = regex.exec(textData);
-    
-    while(locRes != null){
-        processedText.push(locRes[0])
-        locRes = regex.exec(textData)
+        return joinedText
+     
+    } catch(error){
+
+        return error
     }
-    
-    let joinedText = processedText.join(' ');
-
-    return joinedText
 
 }
 
@@ -56,61 +59,15 @@ const textExtractor =  async (req,res) => {
     for(let url of processUrl){
 
         try{
-            const { data } = await axios.post(url, body_data, {
-                headers: {
-                    'Authorization': `Basic ${token}`
-                },
-            })
-        
-            console.log(data)
+            const { data } = await urlExtractor(url)
+            fullTextData.push(data)
         } catch (error) {
-            console.log(error)
+            res.status(404).json({success:false, msg:`${url} created error. Aborting.`})
         }
     }
-        
-        createPostRequest();
-
-        var { data } = await axios.get(url,options);
-
-        axios.post('/user', {
-            firstName: 'Fred',
-            lastName: 'Flintstone'
-          })
-          .then(function (response) {
-            console.log(response);
-          })
-          .catch(function (error) {
-            console.log(error);
-          });
-
-        var textData = processHtml(data);
-
-        var regex = /(?<=\s)[\w/\-\_]+(?=\s*)/g;
-        
-        var processedText = [];
-        // The result can be accessed through the `m`-variable.
-        
-        var locRes = regex.exec(textData);
-        
-        while(locRes != null){
-            processedText.push(locRes[0])
-            locRes = regex.exec(textData)
-        }
-        
-        let joinedText = processedText.join(' ');
-        joinedText += `End of the ${url} text data`
-        fullTextData.push(joinedText)
-        
-        if (err){
-                res.status(404).json({success:false})
-            } else{ 
-             res.status(200).json({success:`${fileName} has been written`,data:joinedText})
-            }
-        
-
-    }
+    
+    res.status(200).json({success:`${fileName} has been written`,data:joinedText})
 }
-
 
 
 function processHtml(textData){
