@@ -1,4 +1,4 @@
-const {database,siteData,tableData,selectorsData} = require('../db/connect');
+const {database,siteData,tableData,selectorsData,textDatabase} = require('../db/connect');
 
 const cheerio = require('cheerio');
 const request = require('request');
@@ -17,14 +17,11 @@ const urlCorrector = (url) =>{
 
 const urlExtractor =  async (url) => {
     // Fetch HTML of the page we want to scrape
-    let options = {
-        headers: { 'User-Agent': 'Mozilla/5.0 (iPad; CPU OS 11_0 like Mac OS X) AppleWebKit/604.1.34 (KHTML, like Gecko) Version/11.0 Mobile/15A5341f Safari/604.1' }
-    }
     try{
-        const { data } = await axios.get(url,options);
+        const { data } = await axios.get(url);
     
         const textData = processHtml(data);
-
+        
         const regex = /(?<=\s)[\w/\-\_]+(?=\s*)/g;
     
         const processedText = [];
@@ -35,7 +32,7 @@ const urlExtractor =  async (url) => {
             processedText.push(locRes[0])
             locRes = regex.exec(textData)
         }
-        
+        console.log(processedText)
         let joinedText = processedText.join(' ');
     
         return joinedText
@@ -48,7 +45,7 @@ const urlExtractor =  async (url) => {
 }
 
 
-const textExtractor =  async (req,res) => {
+const textExtractorErr =  async (req,res) => {
 
     console.log(req.body)
     const url = req.body.url
@@ -62,11 +59,18 @@ const textExtractor =  async (req,res) => {
             const { data } = await urlExtractor(url)
             fullTextData.push(data)
         } catch (error) {
-            res.status(404).json({success:false, msg:`${url} created error. Aborting.`})
+            return res.status(404).json({success:false, msg:`${url} created error. Aborting.`})
         }
     }
-    
-    res.status(200).json({success:`${fileName} has been written`,data:joinedText})
+    let writeToFile = JSON.stringify(fullTextData)
+    var fileTime = Date.now()
+    var fileName = `textData${fileTime}.txt`
+
+    fs.writeFile(fileName,writeToFile,'utf8',(err) => {
+        if (err) throw err;
+        return res.status(404).json({success:false, msg:`Failed at writing file to drive`})
+    });    
+    return res.status(200).json({success:`${fileName} has been written`,data:writeToFile})
 }
 
 
@@ -75,6 +79,60 @@ function processHtml(textData){
     let regEx = new RegExp(htmlReg,'g')
     //initiating replace 
     return textData.replace(regEx,'')
+}
+
+const textExtractor = (req,res) =>{
+    const url = req.query.url;
+    // Check if data already available
+    textDatabase.find({'url':url}, (err, data)=>{
+        console.log(data)
+        if(err || data.length == 0){
+            request(url, getTextOnly)
+            // res.status(404).json({success:false,msg:'Something wrong with Database'})
+        } else{
+            const reply ={
+                url: data[0].url,
+                text: data[0].text
+            }
+            // const history = data.map(d => d.url)
+            return res.status(200).json({success:true,data:reply})
+        }
+        
+    })
+        // Callback for when the request is complete
+    function getTextOnly(error, response, body) {
+        // Check for errors
+        if (!error && response.statusCode == 200) {
+            
+            const textData = processHtml(body);
+            
+            const regex = /(?<=\s)[\w/\-\_]+(?=\s*)/g;
+        
+            const processedText = [];
+
+            var locRes = regex.exec(textData);
+        
+            while(locRes != null){
+                processedText.push(locRes[0])
+                locRes = regex.exec(textData)
+            }
+            
+            let joinedText = processedText.join(' ');
+    
+            const reply ={
+                url: url,
+                text: joinedText,
+            }
+
+            if(reply){    
+                //Registering the links and the results the database
+                textDatabase.insert(reply)
+                return res.status(200).json({success:true,data:reply})
+            } else {
+                return res.status(404).json({success:false,msg:'Something went wrong'})
+            }
+        }
+    }
 }
 
 const showOverview = (req,res) =>{
