@@ -18,8 +18,8 @@ const urlCorrector = (url) =>{
 const textExtractor =  async (req, res) => {
 
     console.log(req.body)
-
-    let options = {
+    const url = req.body.url
+    var options = {
         headers: { 'User-Agent': 'Mozilla/5.0 (iPad; CPU OS 11_0 like Mac OS X) AppleWebKit/604.1.34 (KHTML, like Gecko) Version/11.0 Mobile/15A5341f Safari/604.1' }
     }
     
@@ -28,49 +28,35 @@ const textExtractor =  async (req, res) => {
     for(let url of processUrl){
 
         const { data } = await axios.get(url,options);
-        let urlSplit = url.split('.')
-        let fileTime = Date.now()
+
+        const textData = processHtml(data);
+
+        var regex = /(?<=\s)[\w/\-\_]+(?=\s*)/g;
         
-        let textFile = `textIn${urlSplit[1]}_${fileTime}.txt`
-    $ = cheerio.load(data);
-    let itemsP = $("p");
-    let paraItem = [];
-    
-
-            //console.log(url)
-
-        textExtractor(url,textFile)
-    }
-    const { data } = await axios.get(url,options);
-       // Load HTML we fetched in the previous line
-    const textData = processHtml(data);
-
-    const regex = /(?<=\s)[\w/\-\_]+(?=\s*)/g;
-    
-    const processedText = [];
-    // The result can be accessed through the `m`-variable.
-    
-    var locRes = regex.exec(textData);
-    
-    while(locRes != null){
-        processedText.push(locRes[0])
-        locRes = regex.exec(textData)
-    }
-    
-    let joinedText = processedText.join(' ');
-
-    if (fileId == undefined){
+        var processedText = [];
+        // The result can be accessed through the `m`-variable.
+        
+        var locRes = regex.exec(textData);
+        
+        while(locRes != null){
+            processedText.push(locRes[0])
+            locRes = regex.exec(textData)
+        }
+        
+        let joinedText = processedText.join(' ');
         var fileTime = Date.now()
         var fileName = `textData${fileTime}.txt`
-    } else {
-        var fileName = fileId
-    }
-    let writeToFile = JSON.stringify(joinedText)
+        let writeToFile = JSON.stringify(joinedText)
 
-    fs.writeFile(fileName,writeToFile,'utf8',(err) => {
-        if (err) throw err;
-        console.log('The text data file has been saved!');
-    });
+        fs.writeFile(fileName,writeToFile,'utf8',(err) => {
+            if (err){
+                res.status(404).json({success:false})
+            } else{ 
+             res.status(200).json({success:`${fileName} has been written`,data:joinedText})
+            }
+        });
+
+    }
 }
 
 function processHtml(textData){
