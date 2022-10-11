@@ -2,7 +2,8 @@ const {database,siteData,tableData,selectorsData} = require('../db/connect');
 
 const cheerio = require('cheerio');
 const request = require('request');
-
+const axios = require('axios')
+cheerioTableParser = require('cheerio-tableparser');
 
 const urlCorrector = (url) =>{
     const urlFilter = new RegExp("^(http:\/\/|https:\/\/)?(www\.)?([a-zA-Z0-9-_\.]+\.[a-zA-Z]+)")
@@ -15,8 +16,7 @@ const urlCorrector = (url) =>{
 const showOverview = (req,res) =>{
     // console.log(req.query.url)
     const url = req.query.url;
-    // Execute the HTTP Request
-    // console.log(url)
+    // Check if data already available
     database.find({'url':url}, (err, data)=>{
         if(err || data.length == 0){
             request(url, loadOverview)
@@ -70,6 +70,7 @@ const showOverview = (req,res) =>{
 
 
 const showHistory = (req,res) =>{
+    // Check if data already available
     database.find({},(err,data)=>{
         if(err){
             res.status(404).json({success:false,msg:'Something wrong with Database'})
@@ -82,7 +83,7 @@ const showHistory = (req,res) =>{
 
 const scrapePage = (req,res) =>{
     const url = req.query.url;
-    // Execute the HTTP Request
+    // Check if data already available
     siteData.find({'url':url}, (err, data)=>{
         console.log(data)
         if(err || data.length == 0){
@@ -147,7 +148,6 @@ const scrapePage = (req,res) =>{
     }
 }
 
-cheerioTableParser = require('cheerio-tableparser');
 
 const scrapeTableBody= (req,res) =>{
     const url = req.query.url;
@@ -200,12 +200,10 @@ const scrapeTableBody= (req,res) =>{
 //     return ids
 // }
 
-const axios = require('axios')
-
 const scrapeTester = async (req,res) =>{
     const url = req.query.url;
     // Execute the HTTP Request
-    console.log(url)
+    // console.log(url)
     let options = {
         headers: { 'User-Agent': 'Mozilla/5.0 (iPad; CPU OS 11_0 like Mac OS X) AppleWebKit/604.1.34 (KHTML, like Gecko) Version/11.0 Mobile/15A5341f Safari/604.1' }
     }
@@ -230,11 +228,24 @@ const scrapeTester = async (req,res) =>{
 
 const collectSelectors = (req,res) =>{
     const url = req.query.url;
-    // Execute the HTTP Request
-    console.log(url)
-    request(url, getFullpage)
-
-        // Callback for when the request is complete
+    // Check if data already available
+    selectorsData.find({'url':url}, (err, data)=>{
+        // console.log(data)
+        if(err || data.length == 0){
+            request(url, getFullpage)
+            // res.status(404).json({success:false,msg:'Something wrong with Database'})
+        } else{
+            const reply ={
+                url: data[0].url,
+                classes: data[0].classes,
+                ids: data[0].ids
+            }
+            // const history = data.map(d => d.url)
+            return res.status(200).json({success:true,data:reply})
+        }
+        
+    })    
+    // Callback for when the request is complete
     function getFullpage(error, response, body) {
         // Check for errors
         // console.log(body)

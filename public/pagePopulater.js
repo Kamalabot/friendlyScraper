@@ -28,15 +28,15 @@ function setup(){
     showLink.mouseClicked(getOverview)
     scrape.mouseClicked(getFullpage)
 
-    divIds = ['chlk','chsp','chpa','chli','chtb']
-    textIds = ['lk','sp','pa','li','tb']
-    tagTypes = ['Links','Spans','Paras','Lists','Tables']
+    divIds = ['chlk','chsp','chpa','chli','chtb','chid','chcl']
+    textIds = ['lk','sp','pa','li','tb','ids','cls']
+    tagTypes = ['Links','Spans','Paras','Lists','Tables','Ids','Classes']
 
     for(let ids of divIds){
         createDataElement('div','',ids,'ma2 pa2 tl f3 tc','elemOut','visible')
     }
     
-    callBacks = [linksChecked,spanChecked,paraChecked,listChecked,tableChecked]
+    callBacks = [linksChecked,spanChecked,paraChecked,listChecked,tableChecked,idsChecked,classesChecked]
     checkBoxes = [];
     for(let i = 0; i <= divIds.length - 1;i++){
         // console.log(tagTypes[i],divIds[i])
@@ -64,7 +64,41 @@ function createInputElement(type, name, featureName, id, className, parentId, vi
     parentElement.innerHTML += htmlbuilt
 }
 
+function idsChecked(){
+    link = select('#linkScrape').value()   
+    if(checkBoxes[1].checked()){
+        let URL = `/api/v1/collect/?url=${link}`
+        print(URL)
+        loadJSON(URL, (data)=>{
+            const dataArray = data['ids']
+            createElement('div').parent('textOut').class('pa2 f4 fl').id('idpr')
+            createElement('h3').parent('idpr').html('Following are Ids in the page')
+            for(let ids of dataArray){
+                createElement('span').parent('idpr').class('pa2 f4 fl').html(ids)
+            }
+        })
+    } else {
+        textOut.html('')
+    }
 
+}
+function classesChecked(){
+    link = select('#linkScrape').value()   
+    if(checkBoxes[1].checked()){
+        let URL = `/api/v1/collect/?url=${link}`
+        print(URL)
+        loadJSON(URL, (data)=>{
+            const dataArray = data['classes']
+            createElement('div').parent('textOut').class('pa2 f4 fl').id('clpr')
+            createElement('h3').parent('clpr').html('Following are the Classes in the Page')
+            for(let cl of dataArray){
+                createElement('span').parent('clpr').class('pa2 f4 fl').html(cl)
+            }
+        })
+    } else {
+        textOut.html('')
+    }
+}
 
 function getOverview(){
     
@@ -102,7 +136,7 @@ function getFullpage(){
         })
         //except the table is scraped here
         loadJSON(tableURL,(data)=>{
-            checkBoxes.slice(-1)[0].show()
+            checkBoxes.slice(4,-1).map(d => d.show())
         })
 
     }else{
