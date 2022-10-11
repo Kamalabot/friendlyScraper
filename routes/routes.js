@@ -22,5 +22,6 @@ router.route('/loadLists').get(loadLists)
 router.route('/loadParas').get(loadParas)
 router.route('/loadSpans').get(loadSpans)
 router.route('/loadTables').get(loadTables)
+// router.route('/showDBLinks')
 
 module.exports = router

@@ -17,8 +17,25 @@ const showOverview = (req,res) =>{
     const url = req.query.url;
     // Execute the HTTP Request
     // console.log(url)
-    request(url, loadOverview)
-
+    database.find({'url':url}, (err, data)=>{
+        if(err || data.length == 0){
+            request(url, loadOverview)
+            // res.status(404).json({success:false,msg:'Something wrong with Database'})
+        } else{
+            const reply ={
+                url: data[0].url,
+                links: data[0].links,
+                spans: data[0].spans,
+                paras: data[0].paras,
+                lists: data[0].lists,
+                tables: data[0].tables
+            }
+            // const history = data.map(d => d.url)
+            return res.status(200).json({success:true,data:reply})
+        }
+        
+    })
+    
         // Callback for when the request is complete
     function loadOverview(error, response, body) {
         // Check for errors
@@ -66,9 +83,24 @@ const showHistory = (req,res) =>{
 const scrapePage = (req,res) =>{
     const url = req.query.url;
     // Execute the HTTP Request
-    // console.log(url)
-    request(url, getFullpage)
-
+    siteData.find({'url':url}, (err, data)=>{
+        console.log(data)
+        if(err || data.length == 0){
+            request(url, getFullpage)
+            // res.status(404).json({success:false,msg:'Something wrong with Database'})
+        } else{
+            const reply ={
+                url: data[0].url,
+                links: data[0].links,
+                spans: data[0].spans,
+                paras: data[0].paras,
+                lists: data[0].lists
+            }
+            // const history = data.map(d => d.url)
+            return res.status(200).json({success:true,data:reply})
+        }
+        
+    })
         // Callback for when the request is complete
     function getFullpage(error, response, body) {
         // Check for errors

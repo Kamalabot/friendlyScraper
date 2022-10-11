@@ -6,7 +6,13 @@ var dataOut, textOut, elemOut, elementOutHead
 
 //User inputs
 
-var spans, lists, links, paras, tables
+var spans, lists, links, paras, tables, link
+
+//Parents and children
+var tagTypes, textIds, divIds
+
+//checkboxes
+var checkBoxes, callBacks
 
 function setup(){
     noCanvas()
@@ -22,21 +28,18 @@ function setup(){
     showLink.mouseClicked(getOverview)
     scrape.mouseClicked(getFullpage)
 
-    var divIds = ['chlk','chsp','chpa','chli','chtb']
+    divIds = ['chlk','chsp','chpa','chli','chtb']
+    textIds = ['lk','sp','pa','li','tb']
+    tagTypes = ['Links','Spans','Paras','Lists','Tables']
+
     for(let ids of divIds){
         createDataElement('div','',ids,'ma2 pa2 tl f3 tc','elemOut','visible')
     }
-    // createElement('div').parent('elemOut').id('chlk').class('pa2 tl f3')
-    // createElement('div').parent('elemOut').id('chsp').class('pa2 tl f3')
-    // createElement('div').parent('elemOut').id('chpa').class('pa2 tl f3')
-    // createElement('div').parent('elemOut').id('chli').class('pa2 tl f3')
-    // createElement('div').parent('elemOut').id('chtb').class('pa2 tl f3')
-    var tagTypes = ['Links','Spans','Paras','Lists','Tables']
     
-    var callBacks = [linksChecked,spanChecked,paraChecked,listChecked,tableChecked]
-    var checkBoxes = [];
+    callBacks = [linksChecked,spanChecked,paraChecked,listChecked,tableChecked]
+    checkBoxes = [];
     for(let i = 0; i <= divIds.length - 1;i++){
-        console.log(tagTypes[i],divIds[i])
+        // console.log(tagTypes[i],divIds[i])
         checkBoxes.push(createCheckbox(tagTypes[i], false).parent(divIds[i]).hide())
     }
 
@@ -44,20 +47,7 @@ function setup(){
         // console.log(checkBoxes[i],callBacks[i])
         checkBoxes[i].changed(callBacks[i])
     }
-    // // spans = createCheckbox('Spans', false).parent('chsp').hide();
-    // spans.changed();
-    
-    // // paras = createCheckbox('Paras', false).parent('chpa').hide();
-    // paras.changed();
-    
-    // // lists = createCheckbox('Lists', false).parent('chli').hide();
-    // lists.changed();
 
-    // // tables = createCheckbox('Tables', false).parent('chtb').hide();
-    // tables.changed();
-
-    // // links = createCheckbox('Links', false).parent('chlk').hide();
-    // links.changed();
 }
 
 
@@ -83,30 +73,20 @@ function getOverview(){
     if(link){
         let builtURL = `/api/v1/?url=${link}`
         loadJSON(builtURL, (data)=>{
+            print(data.data)
             dataOut.html('')
-            createElement('div').parent('dataOut').id('lk').class('pa2 tc')
-            createElement('h4').parent('lk').html('Links')
-            createP(data.data['links']).parent('lk')
-            
-            createElement('div').parent('dataOut').id('pr').class('pa2 tc')
-            createElement('h4').parent('pr').html('Paras')
-            createP(data.data['paras']).parent('pr')
-            
-            createElement('div').parent('dataOut').id('li').class('pa2 tc')
-            createElement('h4').parent('li').html('Lists')
-            createP(data.data['lists']).parent('li')
+            for(let i = 0; i <= textIds.length - 1;i++){
+                console.log(tagTypes[i].toLowerCase())
+                createDataElement('div','',textIds[i],'pa2 tc','dataOut','visible')
+                createDataElement('h4',tagTypes[i],'','pa2 tc',textIds[i],'visible')
+                createP(data.data[tagTypes[i].toLowerCase()]).parent(textIds[i])
+            }
 
-            createElement('div').parent('dataOut').id('sp').class('pa2 tc')
-            createElement('h4').parent('sp').html('Spans')
-            createP(data.data['spans']).parent('sp')
-
-            createElement('div').parent('dataOut').id('tb').class('pa2 tc')
-            createElement('h4').parent('tb').html('Tables')
-            createP(data.data['tables']).parent('tb')
         })
     }else{
         dataOut.html('')
-        createElement('p').parent('dataOut').html(`Please provide the link`)
+        createDataElement('p','`Please provide the link`','','pa2 tc','dataOut','visible')
+        // createElement('p').parent('dataOut').html(`Please provide the link`)
     }
 }
 
@@ -118,14 +98,11 @@ function getFullpage(){
         let tableURL = `/api/v1/getTable?url=${link}`
         //Much of the page is scraped, 
         loadJSON(builtURL, (data)=>{            
-            links.show()
-            lists.show()
-            spans.show()
-            paras.show()
+            checkBoxes.slice(0,4).map(d => d.show())
         })
         //except the table is scraped here
         loadJSON(tableURL,(data)=>{
-            tables.show()
+            checkBoxes.slice(-1)[0].show()
         })
 
     }else{
@@ -136,7 +113,7 @@ function getFullpage(){
 
 function spanChecked(){
     link = select('#linkScrape').value()   
-    if(spans.checked()){
+    if(checkBoxes[1].checked()){
         let URL = `/api/v1/loadSpans/?url=${link}`
         print(URL)
         loadJSON(URL, (data)=>{
@@ -153,7 +130,7 @@ function spanChecked(){
 }
 function listChecked(){
     link = select('#linkScrape').value()   
-    if(lists.checked()){
+    if(checkBoxes[3].checked()){
         let URL = `/api/v1/loadLists/?url=${link}`
         print(URL)
         loadJSON(URL, (data)=>{
@@ -172,7 +149,7 @@ function listChecked(){
 }
 function paraChecked(){
     link = select('#linkScrape').value()   
-    if(paras.checked()){
+    if(checkBoxes[2].checked()){
         let URL = `/api/v1/loadParas/?url=${link}`
         print(URL)
         loadJSON(URL, (data)=>{
@@ -191,7 +168,7 @@ function paraChecked(){
 
 function tableChecked(){
     link = select('#linkScrape').value()   
-    if(tables.checked()){
+    if(checkBoxes[4].checked()){
         let URL = `/api/v1/loadTables/?url=${link}`
         print(URL)
         loadJSON(URL, (data)=>{
@@ -208,7 +185,7 @@ function tableChecked(){
 }
 function linksChecked(){
     link = select('#linkScrape').value()   
-    if(links.checked()){
+    if(checkBoxes[0].checked()){
         let URL = `/api/v1/loadLinks/?url=${link}`
         print(URL)
         loadJSON(URL, (data)=>{
