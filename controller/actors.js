@@ -15,21 +15,75 @@ const urlCorrector = (url) =>{
     return builtURL
 }
 
-const textExtractor =  async (req, res) => {
+const urlExtractor =  async (url) => {
+    // Fetch HTML of the page we want to scrape
+    let options = {
+        headers: { 'User-Agent': 'Mozilla/5.0 (iPad; CPU OS 11_0 like Mac OS X) AppleWebKit/604.1.34 (KHTML, like Gecko) Version/11.0 Mobile/15A5341f Safari/604.1' }
+    }
+
+    
+    const { data } = await axios.get(url,options);
+       // Load HTML we fetched in the previous line
+    const textData = processHtml(data);
+
+    const regex = /(?<=\s)[\w/\-\_]+(?=\s*)/g;
+    
+    const processedText = [];
+    // The result can be accessed through the `m`-variable.
+    
+    var locRes = regex.exec(textData);
+    
+    while(locRes != null){
+        processedText.push(locRes[0])
+        locRes = regex.exec(textData)
+    }
+    
+    let joinedText = processedText.join(' ');
+
+    return joinedText
+
+}
+
+
+const textExtractor =  async (req,res) => {
 
     console.log(req.body)
     const url = req.body.url
-    var options = {
-        headers: { 'User-Agent': 'Mozilla/5.0 (iPad; CPU OS 11_0 like Mac OS X) AppleWebKit/604.1.34 (KHTML, like Gecko) Version/11.0 Mobile/15A5341f Safari/604.1' }
-    }
     
     const processUrl = url.split(',');
+    const fullTextData = [];
 
     for(let url of processUrl){
 
-        const { data } = await axios.get(url,options);
+        try{
+            const { data } = await axios.post(url, body_data, {
+                headers: {
+                    'Authorization': `Basic ${token}`
+                },
+            })
+        
+            console.log(data)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+        
+        createPostRequest();
 
-        const textData = processHtml(data);
+        var { data } = await axios.get(url,options);
+
+        axios.post('/user', {
+            firstName: 'Fred',
+            lastName: 'Flintstone'
+          })
+          .then(function (response) {
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+
+        var textData = processHtml(data);
 
         var regex = /(?<=\s)[\w/\-\_]+(?=\s*)/g;
         
@@ -44,20 +98,20 @@ const textExtractor =  async (req, res) => {
         }
         
         let joinedText = processedText.join(' ');
-        var fileTime = Date.now()
-        var fileName = `textData${fileTime}.txt`
-        let writeToFile = JSON.stringify(joinedText)
-
-        fs.writeFile(fileName,writeToFile,'utf8',(err) => {
-            if (err){
+        joinedText += `End of the ${url} text data`
+        fullTextData.push(joinedText)
+        
+        if (err){
                 res.status(404).json({success:false})
             } else{ 
              res.status(200).json({success:`${fileName} has been written`,data:joinedText})
             }
-        });
+        
 
     }
 }
+
+
 
 function processHtml(textData){
     let htmlReg = "(?<=(\s))<\w+>(?=(\s))|<(?<=<)[^<>]+(?=>)>|<(?<=<)\/[^><]+(?=>)>|<>|<|>|(?<=(\s))>\w+(?=(\s))|(?<=(\s))<\w+(?=(\s))|[\b.,?]\s{2,}|\b\s{2,}|(?<=>)\s+(?=<)"
