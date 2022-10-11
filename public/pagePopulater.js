@@ -65,12 +65,13 @@ function createInputElement(type, name, featureName, id, className, parentId, vi
 }
 
 function idsChecked(){
+    //print('Id yes sir...')
     link = select('#linkScrape').value()   
-    if(checkBoxes[1].checked()){
+    if(checkBoxes[5].checked()){
         let URL = `/api/v1/collect/?url=${link}`
         print(URL)
         loadJSON(URL, (data)=>{
-            const dataArray = data['ids']
+            const dataArray = data.data['ids']
             createElement('div').parent('textOut').class('pa2 f4 fl').id('idpr')
             createElement('h3').parent('idpr').html('Following are Ids in the page')
             for(let ids of dataArray){
@@ -83,12 +84,13 @@ function idsChecked(){
 
 }
 function classesChecked(){
+    //console.log('Class iruken')
     link = select('#linkScrape').value()   
-    if(checkBoxes[1].checked()){
+    if(checkBoxes[6].checked()){
         let URL = `/api/v1/collect/?url=${link}`
         print(URL)
         loadJSON(URL, (data)=>{
-            const dataArray = data['classes']
+            const dataArray = data.data['classes']
             createElement('div').parent('textOut').class('pa2 f4 fl').id('clpr')
             createElement('h3').parent('clpr').html('Following are the Classes in the Page')
             for(let cl of dataArray){
@@ -136,7 +138,7 @@ function getFullpage(){
         })
         //except the table is scraped here
         loadJSON(tableURL,(data)=>{
-            checkBoxes.slice(4,-1).map(d => d.show())
+            checkBoxes.slice(4,7).map(d => d.show())
         })
 
     }else{
