@@ -57,7 +57,12 @@ function setup(){
 
 function listingLinks(){
     var urls = select('#urls').value()
-    
+    var splitUrls = urls.split(',')
+    var buttonId = 0;
+    var buttons = []
+    for (let links of splitUrls){
+        buttons.push(createDataElement('button',links,`button${buttonId}`,"pa2 ma2","linkList","visible"))
+    }
 }
 
 function createDataElement(elt, text, id, className, parentId, visibility){
