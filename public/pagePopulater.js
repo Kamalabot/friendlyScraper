@@ -60,8 +60,45 @@ function listingLinks(){
     var splitUrls = urls.split(',')
     var buttonId = 0;
     var buttons = []
-    for (let links of splitUrls){
-        buttons.push(createDataElement('button',links,`button${buttonId}`,"pa2 ma2","linkList","visible"))
+    
+    for (let l in splitUrls){
+        let nameButton = `Link-${l}`
+        let newTextButton = new textButton('button',nameButton,`button${buttonId}`,"pa2 ma2","linkList",l,"textOut")
+        textButton.makeButton()
+        textButton.attachCaller()
+        buttons.push(newTextButton)
+        //buttons.push(createDataElement())
+    }
+
+}
+
+class textButton{
+    constructor(elt, text, id, className, parentId, urlLink, outputId){
+        this.elt = elt;
+        this.text = text;
+        this.id = id;
+        this.className = className;
+        this.parentId = parentId;
+        this.urlLink = urlLink;
+        this.outputId = outputId;
+        
+    }
+    makeButton(){
+        let parentElement = document.getElementById(this.parentId);
+        let htmlbuilt = `<${this.elt} id="${this.id}" class="${this.className}" visibility="visible">${this.text}</${this.elt}>`;
+        parentElement.innerHTML += htmlbuilt
+    }
+    attachCaller(){        
+        let currentButton = document.getElementById(this.id);
+        currentButton.addEventListener('click', function(){
+            console.log(`logging from ${this.text}`)
+            let builtURL = `/api/v1/extractText?url=${this.urlLink}`
+            let outPutArea = document.getElementById(this.outputId)
+            loadJSON(builtURL, (data)=>{
+                print(data.data)
+                outPutArea.html(data.data)
+            })
+        })
     }
 }
 
