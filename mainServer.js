@@ -16,7 +16,7 @@ const routes = require('./routes/routes')
 //middlewares
 app.use(express.static('./public'))  //provides the static page
 app.use(express.json())
-app.use(express.urlencoded({extended:false}))
+app.use(express.urlencoded({extended:true}))
 
 app.use('/api/v1', routes)
 

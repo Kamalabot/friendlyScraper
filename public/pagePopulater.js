@@ -61,11 +61,11 @@ function listingLinks(){
     var buttonId = 0;
     var buttons = []
     
-    for (let l in splitUrls){
-        let nameButton = `Link-${l}`
-        let newTextButton = new textButton('button',nameButton,`button${buttonId}`,"pa2 ma2","linkList",l,"textOut")
-        textButton.makeButton()
-        textButton.attachCaller()
+    for (let lind in splitUrls){
+        let nameButton = `Link-${lind}`
+        let newTextButton = new textButton('button',nameButton,`button${lind}`,"pa2 ma2","linkList")
+        newTextButton.makeButton()
+        newTextButton.attachCaller(`button${lind}`,nameButton, splitUrls[lind],"textOut")
         buttons.push(newTextButton)
         //buttons.push(createDataElement())
     }
@@ -73,27 +73,24 @@ function listingLinks(){
 }
 
 class textButton{
-    constructor(elt, text, id, className, parentId, urlLink, outputId){
+    constructor(elt, text, id, className, parentId){
         this.elt = elt;
         this.text = text;
         this.id = id;
         this.className = className;
-        this.parentId = parentId;
-        this.urlLink = urlLink;
-        this.outputId = outputId;
-        
+        this.parentId = parentId;        
     }
     makeButton(){
         let parentElement = document.getElementById(this.parentId);
         let htmlbuilt = `<${this.elt} id="${this.id}" class="${this.className}" visibility="visible">${this.text}</${this.elt}>`;
         parentElement.innerHTML += htmlbuilt
     }
-    attachCaller(){        
-        let currentButton = document.getElementById(this.id);
+    attachCaller(id, text, urlLink,outputId){        
+        let currentButton = document.getElementById(id);
         currentButton.addEventListener('click', function(){
-            console.log(`logging from ${this.text}`)
-            let builtURL = `/api/v1/extractText?url=${this.urlLink}`
-            let outPutArea = document.getElementById(this.outputId)
+            console.log(`logging from ${text}`)
+            let builtURL = `/api/v1/extractText?url=${urlLink}`
+            let outPutArea = document.getElementById(outputId)
             loadJSON(builtURL, (data)=>{
                 print(data.data)
                 outPutArea.html(data.data)
