@@ -85,7 +85,7 @@ const textExtractor = (req,res) =>{
     const url = req.query.url;
     // Check if data already available
     textDatabase.find({'url':url}, (err, data)=>{
-        console.log(data)
+        //console.log(data)
         if(err || data.length == 0){
             request(url, getTextOnly)
             // res.status(404).json({success:false,msg:'Something wrong with Database'})
@@ -121,7 +121,7 @@ const textExtractor = (req,res) =>{
     
             const reply ={
                 url: url,
-                text: joinedText,
+                text: joinedText
             }
 
             if(reply){    

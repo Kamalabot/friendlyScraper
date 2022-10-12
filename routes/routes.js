@@ -11,7 +11,7 @@ router.route('/showLinks').get(showHistory)
 router.route('/scrape').get(scrapePage)
 router.route('/getTable').get(scrapeTableBody)
 router.route('/collect').get(collectSelectors)
-router.route('/extractText').post(textExtractor)
+router.route('/extractText').get(textExtractor)
 
 //Data or web scraping  Testing Routes
 router.route('/test').get(scrapeTester)

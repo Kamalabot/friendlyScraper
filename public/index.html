@@ -17,8 +17,14 @@
       <button id="showLink" class="pa2 ma2">Show Overview</button>
       <button id="scrape" class="pa2 ma2">Scrape</button>
     </div>
+    <div class="w-50 fl pa2 shadow-2 tc">
+      <p><label for="urls">Multiple URLs:</label></p>
+  <textarea id="urls" name="urls" rows="4" cols="50">Paste URLs with by seperating them with a comma.</textarea>
+  <button id="getPages">Links to Download</button>
+      <div class="fl pa2 tc flex flex-wrap" id="linkList"></div>
+    </div>
     <div class="w-50 fl pa2 flex" id="dataOut"></div>
-    <h3 class="tl">Recieved Data. Select Options below.</h3>
+    <h3 class="tl">Query parts of the Page</h3>
     <div class="w-100 fl pa2 flex-wrap flex" id="elemOut">
   
     </div>

@@ -1,12 +1,12 @@
 //buttons
-var showLink, scrape
+var showLink, scrape, getPages
 
 //data show areas
 var dataOut, textOut, elemOut, elementOutHead
 
 //User inputs
 
-var spans, lists, links, paras, tables, link
+var spans, lists, links, paras, tables, link, listLinks
 
 //Parents and children
 var tagTypes, textIds, divIds
@@ -14,19 +14,24 @@ var tagTypes, textIds, divIds
 //checkboxes
 var checkBoxes, callBacks
 
+//id="" class="pa2 ma2"
+
 function setup(){
     noCanvas()
     //buttons
     showLink = select('#showLink')
     scrape = select('#scrape')
+    getPages = select('#getPages')
 
     //data areas
     dataOut = select('#dataOut')
     textOut = select('#textOut')
     elemOut = select('#elemOut')
+    listLinks = select('#listLinks')
 
     showLink.mouseClicked(getOverview)
     scrape.mouseClicked(getFullpage)
+    getPages.mouseClicked(listingLinks)
 
     divIds = ['chlk','chsp','chpa','chli','chtb','chid','chcl']
     textIds = ['lk','sp','pa','li','tb','ids','cls']
@@ -50,6 +55,10 @@ function setup(){
 
 }
 
+function listingLinks(){
+    var urls = select('#urls').value()
+    
+}
 
 function createDataElement(elt, text, id, className, parentId, visibility){
     let parentElement = document.getElementById(parentId);
