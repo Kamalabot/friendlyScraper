@@ -1,0 +1,584 @@
+Main points:
+
+Experience : 3 to 10 years range
+
+Some head lines :
+Experienced in Data visualisation, Analytics and Data-Driven 
+
+Strong communication skills and being able to communicate and interact effectively with leadership team to deliver insightful customer analyses and actionable recommendations
+-> How to show the data to the Executives?
+
+Demonstrated experience in analyzing voluminous data from raw sources
+-> How to work with data that is much larger than your harddisk
+
+
+Building and maintaining Customer Dash boards
+-> Customer dashboards. What they are made of?
+
+Report automation and Analytics
+-> What to report? then comes how to report it
+
+succeed in delivering business value by turning data into Insights
+
+main work would be : 
+
+Cross channel and Cross product Analytics
+
+Helping the Marketing team
+
+Building and maintaining Customer Dash boards
+
+Presenting the data in story telling format
+
+Preparing the data for using in tools similar to Excel, Tableau 
+
+Using data to measure business risks and control the issues or processes
+Dashboarding with Tableau and ETL 
+
+Working with multiple sophisticate datasets to help operations and strategy team for data driven decision making 
+
+Identifying a business problem and solving it through data insights...
+
+Experience in building requirements to improve data gathering. Data engineering, data Warehousing, data integration and Reporting 
+
+you’ll come up with creative solutions to complex problems, and learn new skills to complement your existing abilities
+
+Build attractive and rich client-facing dashboards and reports.
+
+Help develop and implement use of BI tools.
+
+Training internal and external users in Spotfire/Tableau
+
+Troubleshoot, test, and maintain the platform and configurations to 
+ensure strong optimization and functionality.
+
+Experience developing and implementing enterprise-scale reports and dashboards.
+
+Building interactive and complex data visualizations and analysis tools (e.g., dashboards).
+
+Researching, designing, and testing machine-learning algorithms and programs.
+
+Refining assets based on feedback, ensuring their continuity of accuracy and functionality.
+
+Candidates are expected to be passionate about designing and creating meaningful data visualizations and memorable user experiences. Ability to think strategically and communicate data-driven insights
+
+equally important for the candidate to be proficient in SQL and well-versed with concepts of Data warehousing and Data Modeling so that the candidate can work closely with business to curate and “ready” the data in a form 
+
+Strong experience in building dashboards in any of the BI Platforms
+Should have experience in writing SQL queries to understand or build dashboards
+
+Solve data and analytics problems using design thinking principles
+
+Deep knowledge and understanding of Sales, Marketing and Customer success business domains
+
+Strategic link, the question and the headline
+
+About the job
+Strategic Insights (Marketing Analytics) is part of Marketing, Growth & Innovation (MG&I) organization within Chase Card Services and is responsible for driving and providing actionable insights, analyses, and recommendations to the leadership team and marketing teams across Chase Card Services including card acquisitions, existing portfolios, and product teams to grow the business.
+
+The Data Visualization Analytics, Associate is part of the Strategic Insights team. This dynamic position will be focused on cross-channel and cross-product analytics and data visualization; that is, focused on analyzing our customers across various card products and lines of business, designing and building dashboards with Tableau, visualizing data and insights for the executives, and driving our business growth and holistic marketing strategies by providing innovative ideas as well as actionable insights. This is a high exposure role that offers frequent opportunities to work directly with presidents, gener al managers, and heads of various card centers of excellence.
+
+Our business is based on a strong culture of highly-informed decision-making. As such, the successful candidate will be one who is able to scan across a large ecosystem of data, research, and other customer insights, in order to develop and influence critical initiatives and marketing strategies across teams and channels.
+
+Key Responsibilities Include
+
+Design, develop, and maintain customer dashboards for the Strategic Insights group and teams across Chase Card using data visualization tools such as Tableau.
+Interpret and analyze the insights from Tableau-based dashboards & interactive analytic suites to identify and present actionable opportunities and monitor the comparative effectiveness of various initiatives across Card teams.
+Package and present data and insights in an executive and visualized format.
+Prepare and automate the data needed for Tableau dashboards, including any statistically derived metrics or benchmarks; and uses multiple analytic tools and data sources to support that objectives, including Tableau, Alteryx, Trifacta, SAS, SQL, and Excel.
+Pro-actively identify key growth areas and opportunities, and communicate recommendations to the Card leadership team and various marketing teams across the firm to influence and fine-tune our marketing strategies.
+Collaborate with cross-functional strategy teams within Card to design and deliver customized analyses and strategic roadmaps, and synthesize the data into actionable insights to influence and drive business and marketing strategies for the Card businesses.
+Identify opportunities to improve our card marketing cost efficiency and drive sustainable business growth.
+
+Qualifications
+
+Education: Bachelor's degree in a quantitative discipline such as business, finance, economics, engineering, statistics, information system, or mathematics; Master's degree in a STEM field preferred.
+
+Required work experience: 5-7 years of relevant experience in data visualization, analytics, and data-driven strategic marketing role(s).
+
+Skills
+
+Strong Tableau and Tableau Server knowledge and skills; other visualization designing tools such as Illustrator or equivalent is a plus
+Excellent analytical ability as well as hands-on experience with analytical and statistical packages/databases (e.g. SAS, SQL or equivalent); experience with big data technologies and machine learning is a plus
+Strong communication skills and being able to communicate and interact effectively with leadership team to deliver insightful customer analyses and actionable recommendations
+Ability to analyze, interpret and translate metric performances into insights and recommendations, and package and present projections, performance trends, and performance outlooks in an executive format
+Experience with data automation or data wrangling ETL tools such as Alteryx, Trifecta or equivalent
+Demonstrated experience in analyzing voluminous data from raw sources
+Ability to conduct research into data mining issues, practices, and products as required
+Demonstrated problem solving skills, especially in a fast-paced environment
+Understanding of the key drivers within the credit card P&L is preferred
+
+JPMorgan Chase & Co., one of the oldest financial institutions, offers innovative financial solutions to millions of consumers, small businesses and many of the world's most prominent corporate, institutional and government clients under the J.P. Morgan and Chase brands. Our history spans over 200 years and today we are a leader in investment banking, consumer and small business banking, commercial banking, financial transaction processing and asset management.
+
+We recognize that our people are our strength and the diverse talents they bring to our global workforce are directly linked to our success. We are an equal opportunity employer and place a high value on diversity and inclusion at our company. We do not discriminate on the basis of any protected attribute, including race, religion, color, national origin, gender, sexual orientation, gender identity, gender expression, age, marital or veteran status, pregnancy or disability, or any other basis protected under applicable law. In accordance with applicable law, we make reasonable accommodations for applicants' and employees' religious practices and beliefs, as well as any mental health or physical disability needs.
+
+About the job
+The Control Management Associate performs ongoing analysis of the business risk and control environment to identify significant gaps and weaknesses, ensuring controls are properly designed.
+
+Job Description
+
+The Control Management Group's (CM) mission is to solidify an effective Firmwide control framework within and across the lines of business by identifying and remediating control issues with a sense of urgency, regardless of the source. The CM team will work collaboratively with other control disciplines and will oversee existing control functions as well as the development of new control functions and protocols. This process will enable the firm to engage the appropriate teams in a timely manner and provide the ability to quickly remediate critical control issues across all the impacted areas of the firm. The Controls Room is a firmwide Reporting Utility that provides standardized control-related data and drives quicker, efficient and accurate reporting. It's an information warehouse with capabilities for reporting, visualizations and analytics. Its primary goal is to enhance control oversight and efficiency through the standardization and automation of operational risk reporting, provide access to firmwide aggregated information and produce business risk insight.
+
+Roles And Responsibilities
+
+Work with the Automation lead to identify and deliver Analytics and report automation solutions
+Develop best in class Dashboards/visualizations to generate actionable insights
+Develop scalable data preparation, maintenance, and reporting procedures that can be leveraged by business units and functional areas across the firm
+Implement data evaluation techniques aimed at measuring business risks and control issues
+Develop re-usable tools that can be leveraged by business units across the firm
+Collaborate with business managers and developers to integrate the results with existing systems
+Comply with JPMC procedures and QA best practices to ensure the quality of data, models and outputs
+Stay abreast of new tools and technologies to practice up-to-date data evaluation strategies
+Collaborate with stakeholders across the firm to integrate results with existing systems and processes
+
+Qualification, Experience & Skills
+
+Overall 5+ years of BI/Analytics experience
+Master's or a graduate degree in Computer Science, Statistics, or a related quantitative field
+Solid database skills:
+At least 2 years' experience in ETL using Alteryx.
+At least 3 years' experience in Dashboarding using Tableau
+Knowledge of Qlikview/Qliksense is a plus.
+Ability to learn quickly, adjust to changes and think outside the box
+Excellent time management and organizational skills with attention to detail
+Good verbal/written and inter-personal skills
+Positive attitude, self-motivated and confident
+Ability to learn quickly, adjust to changes and think outside the box
+Knowledge of Big Data Concepts / Hadoop is a plus
+Experience with operational risk in the banking industry is preferred
+Should be flexible with EMEA shifts
+
+Data Transformation Specialist
+
+
+What’s In It For You
+
+Join a dynamic regional research team focused on generating leading upstream research that supports workflow solutions driving customer success.
+Development path to becoming one of our regional upstream subject matter experts, building strategic relationships and bringing thought leadership.
+Gain additional capabilities through collaboration with other internal stakeholders – wider regional and insight research teams; commercial; advisory solutions; product development, customer support and marketing.
+
+Responsibilities
+
+Collecting and reporting on offshore field development activities in the assigned region particularly via phone calling, to establish and maintain relevant industry contacts
+Gathering accurate data of assigned offshore subsea construction vessels
+Updating and maintaining the Company's proprietary databases including data input and data checks
+Analysis of data/news for contact conversation and potential contributions to forecasting reports
+Providing support to related editorial and market research efforts as assigned and customer support when necessary
+
+What We’re Looking For
+
+Preferred two years’ work experience and familiarity with the offshore oil and gas industry
+Excellent verbal and written communication skills with fluency in English.
+Self-motivated and able to work with minimal supervision, have excellent attention to detail and the ability to meet strict deadlines.
+Enthusiasm and a genuine interest in the subject matter are extremely important.
+Minimum Bachelor’s degree, and other relevant work experience will be considered.
+
+Flexible Working (optional)
+
+We pride ourselves on our agility and diversity, and we welcome requests to work flexibly. For most roles, flexible hours and/or an element of remote working are usually possible. Please talk to us at interview about the type of arrangement that is best for you. We will always try to be adaptable wherever we can.
+
+Return to Work
+
+Have you taken time out for caring responsibilities and are now looking to return to work? As part of our Return to Work initiative (link to career site page when available), we are encouraging enthusiastic and talented returners to apply, and will actively support your return to the workplace.
+
+The Location: Kuala Lumpur, Malaysia; Gurgaon, India
+
+About Company Statement
+
+S&P Global delivers essential intelligence that powers decision making. We provide the world’s leading organizations with the right data, connected technologies and expertise they need to move ahead. As part of our team, you’ll help solve complex challenges that equip businesses, governments and individuals with the knowledge to adapt to a changing economic landscape.
+
+S&P Global Commodity Insights enables organizations to create long-term, sustainable value with data and insights for a complete view on the global energy and commodities markets.
+
+
+options
+About the job
+Chief Data & Analytics Office (CDAO) is looking for a multifaceted Data Engineer to help Cisco to unleash the power of data.
+
+We have a huge amount of information from Cisco's Enterprise datasets, and you will help provide data engineering and analytics solutions which will enable Cisco to be more data-driven to optimize its day to day operations and strategy.
+
+You will help make the Data threading, data clean-up and traditional & predictive analytics available and consumable in inventive new ways and help build a community of "Data Engineering & Analytics advocates” across the company to ensure adoption.
+
+Day to day that means
+
+Working with multiple sophisticated data sets to accelerate operational and strategic data-driven decision-making.
+
+Understanding the opportunities and business drivers and building insight and solutions for those through data.
+
+Opportunity to learn and apply data science tools and techniques including python, machine learning and data visualization.
+
+Continuous personal development in a multifaceted, multidisciplinary environment.
+
+Identifying and prioritizing business and technical requirements using agile methodologies.
+
+Work with a variety of product owners, scrum masters and development teams across different time zones.
+
+Who You’ll Work With
+
+This role will be collaborating closely with Engineering BU, Customer Success BU, and IT groups.
+
+Who You Are
+
+You've got experience with identifying a business problem and solving it through data driven insights.
+
+Experience in building requirements to improve data gathering for analytic purposes. Got experience to Perform, Support and Lead all aspects of Different Functional areas like Data Analysis, Data Engineering strategy, Data Warehousing, Data Integration and Report, and build the Data Visualization. We need more data SME strength to support the ongoing new use cases coming from Engineering, CX, Sales, Finance and IT business functions.
+
+Minimum Qualifications
+
+BS/MS or equivalent (Sophisticated degree preferred)
+
+7-10+ years of full-time data analytics/ engineering experience.
+
+Should have a very good hands on experience in working with ETL/ELT technologies, Cloud DB platforms (Snowflake, AWS, Google), GCP or AWS Technology Stacks, Informatica/DBT/Fivetran, SQL for Data Engineering and Data Science, and Python.
+
+Able to take a concept or an idea and work through the different stages all the way to the execution and outcome.
+
+Outstanding analytical thinking and aptitude.
+
+Hands on experience in Data Engineering/Data Migration projects.
+
+Customer Success, Customer Experience, Product Telemetry, Finance domain knowledge preferred.
+
+Familiarity with advance analytics and machine learning topics.
+
+Should have experience in storytelling with data in form of visuals.
+
+Certification in one of Cloud DB/Data Engineering/GCP/AWS Tech Stack tracks are a plus.
+
+Good written and verbal communication skills, and comfortable presenting findings to executive level audience and translating data into understandable documents.
+
+About the job
+Job Description
+
+
+What We Do and How?
+
+
+We are a market research company, revolutionizing how it's done! We mix fast paced development and unique approaches to bring best practices and strategy to our technology. Our tech stack is deep, leveraging several languages and frameworks including Python, C#, Java, Kotlin, React, Angular, and Django among others. Our engineering hurdles sit at the intersection of technologies ranging from mobile, computer vision and crowdsourcing, to machine learning and big data analytics.
+
+
+Our Team
+
+
+From San Francisco to Chicago to Ottawa, our R&D team is comprised of talented individuals spanning across a robust tech stack. The R&D team is comprised of product, data analytics, engineers across Front End, Back End, DevOps, Business Intelligence, ETL, Data Science, Mobile Apps, and much more. Across these different groups we work towards one common goal: To build products into efficient and seamless user experiences that help our clients succeed.
+
+
+About the role
+
+
+Numerator is currently looking for a Data Visualization Engineer to join our Business Intelligence team here in India. In this role, you will be responsible for helping to develop visualizations for datasets that are used by fortune 500 brands and retailers. Day-to-day, you’ll come up with creative solutions to complex problems, and learn new skills to complement your existing abilities.
+
+This is a great role for those who are looking for hands-on experience with high visibility and impact. We welcome fresh ideas and approaches as we constantly aim to improve our development processes. Our team has experience using a wide range of technologies and years of cloud and big data experience. We are always learning and growing, so we can guarantee that you won’t be bored with us!
+
+If you are seeking an environment where you get to do meaningful work with other great engineers, then we want to hear from you!
+
+
+What you will get to do
+
+
+Build attractive and rich client-facing dashboards and reports.
+Help develop and implement use of BI tools.
+Training internal and external users in Spotfire/Tableau
+Troubleshoot, test, and maintain the platform and configurations to ensure strong optimization and functionality.
+Evaluate the technical trade offs of decisions and build things that last and scale.
+Maintain and fix existing configuration issues.
+Create and analyze new configuration technologies - figuring out how we can scale up our solutions and tools.
+
+Requirements
+
+
+3+ years of experience
+Advanced development capabilities with BI tools such as Tableau, Spotfire; ability to drill-down or drill-through to other supporting reports.
+Experience with setting up extract refreshes and data connections on Spotfire server and troubleshooting
+Proficiency with SQL writing and debugging skills in its variation among databases (Snowflake, PostgreSQL and Redshift).
+Experience developing and implementing enterprise-scale reports and dashboards.
+Knowledge in an Agile software development environment,
+Experience with version control systems (Git, Subversion, etc.).
+Ability to plan resource requirements from high level specifications, Data Analysis, including data collection.
+Eager to expand your knowledge and abilities in data visualization tools and technologies.
+You look ahead to identify opportunities and foster a culture of innovation.
+
+Nice to haves
+
+
+Experience in a language for statistical computing (R, Python/pandas).
+Bachelor's degree in engineering or data science background preferred
+Experience working with different datasets, industries and stakeholders (internals & externals).
+Strong Business acumen. experience as a business analyst is a strong asset.
+Passionate about data visualization and its ability to tell a story.
+Familiarity with JSON and similar data formats
+Expertise in big data, analytics, machine learning, and personalization.
+Ability to present, demonstrate and communicate effectively.
+
+Your Responsibilities
+
+Experience:3-5 years' experience
+
+Profile
+Experience in UI/UX/Power BI/Angular JS/Tableau/Grafana
+Python based visualizations
+Building interactive and complex data visualizations and analysis tools (e.g., dashboards).
+Researching, designing, and testing machine-learning algorithms and programs.
+Refining assets based on feedback, ensuring their continuity of accuracy and functionality.
+Designing, developing, and maintaining user-friendly data visualizations and dashboards using complex datasets from different sources.
+Implementing best practices to ensure dashboard design consistency for the best user experience.
+Designing, writing, and testing analytics platform code.
+Debugging applications, tracing code, and finding and fixing bugs
+Your profile: Your benefits: Contact:
+
+About the job
+IT needs to rapidly evolve to ensure it continues to be recognized for creating and protecting business value, whilst simultaneously managing and balancing business risk. The Information, Data and Analytics (IDA) capability has been established to support project delivery and user support services (application and process) for Management information systems employing reporting, visualization and analytics. IDA is an area which is getting higher attention, stronger recognition from the Business as a key area to support in providing the right tools for the Business to build the right reports/visualizations needed to drive decisions more effectively and rapidly.
+
+Key responsibilities:
+
+Drives clarification of requirements for reports
+Integrates business specific needs from a technical solution design perspective and delivers effort estimates for those solutions
+Contributes to the development of the Functional Specs from a technical design perspective
+Develops reports/visualizations based on technical solution design
+Perform Prototyping and POC in support of requirements definition or technical design questions
+Execute Unit Test, defect resolution and hyper care
+
+Additional challenges (may) include:
+
+Working through complex interfaces across organizational and geographic boundaries
+Working in a fast moving, rapidly changing and dynamic environment
+The working days in Bangalore Hub are based on two shifts in order to work in the same time zone that the Projects and Asset we serve. (HR to conform the shift hours) Lead teams and initiatives at project/Capability level to drive estimations, designs, initiatives and outcomes
+
+Requirements:
+
+Several Analytics tools will be used for reporting/visualization by business. Candidates are expected to be passionate about designing and creating meaningful data visualizations and memorable user experiences. Ability to think strategically and communicate data-driven insights by transforming science and numbers into easily understandable visualization is desirable. While the focus stays on bringing out stories from data, it is equally important for the candidate to be proficient in SQL and well-versed with concepts of Data warehousing and Data Modeling so that the candidate can work closely with business to curate and “ready” the data in a form that is conducive to reporting/self-service analytics.
+
+Skills:
+
+Minimum years of experience with reporting/visualization/ analytics tools. Refer table above.
+Power BI is a mandatory skill.
+Proficiency in SQL, Data Warehousing and Data Modeling concepts is mandatory.
+Hands on experience of data modelling in Azure analysis services (AAS) is mandatory.
+Knowledge and experience in other Data visualization tools is an added advantage.
+Strong data modelling experience using ER diagram, Dimensional data modelling Star schema modelling
+Data procurement strategies – DB, Cached/import mode (applications, features and drawbacks) and enabling Row Level Security (RLS)
+Performance tuning (pushdown logic, calculated columns and measures, data loading strategies, filtering data, variables)
+Development of visualizations and interactivity (Bar Chart, Line Chart, Scatter Plot, Heat maps, combined charts, bookmarks, report interfaces, slicers/filters, themes, animations, etc.)
+Experience in User-centered design, wireframing, knowledge of the data visualization concepts, ability to pick the right graphs depending on the context and overall focus on aesthetics is a must.
+Knowledge of Power BI cloud, workspaces, gateways, premium capacity, publishing, scheduling, User Access Management is a requisite.
+Knowledge of Cloud technologies is preferred.
+Experience setting up data connections, mobility, writing functions and using advanced features like ESRI, what-if analysis, forecasting, NLP, scripting, R & python etc. is preferred
+Confident communicator, able to express your ideas and convey complicated concepts simply
+
+options
+About the job
+We’re creating our own future
+
+At Volvo Cars, we are making bold digital visions come true. We aim to be the leader in the automotive world by creating a digital ecosystem built around making our customers' lives less complicated. What we all have in common at Volvo Cars is our passion for protecting lives, our endless curiosity, and our dedication to create a new future for the automotive industry. Our human centric focus is what separates us from all other car companies.
+
+What We Offer
+
+This role is part of Data and Analytics team which p rovides competence to Products Areas, Clusters and Teams to succeed in delivering business value by turning data into Insights. Expected to Utiliz e standards and best practices to enable Business areas to accelerate their value journey through Self-Service data & analytics, and to accomplish “insights at the fingertips” for Volvo Car Group . Provides opportunity to mentor developers to build quality products, contribute to multiple domains and be part of technology selection/solution architecture.
+
+Main Responsibilities
+
+Act as Technology expert to build quality data products with willingness to self-learning and long-term commitment. Interact with Product teams, architects, and platform experts to deliver user stories on timely basis with world class quality.
+
+Do you fit the profile?
+
+B.E, MCA, BSc, MSc, or equivalent training in Computer Science or other relevant subject area
+
+Experience – 3-10+ years of Industry Experience
+Support and develop products to enhance business decision making capabilities, utilizing Volvo Cars standards, best practices, and data & analytics tools
+Educate people and products how to work with data and visualization
+Work with stakeholders throughout the organization to identify opportunities for leveraging company data to drive business solutions
+Develop, construct, test and maintain architectures
+Data acquisition
+Develop data set processes
+Identify ways to improve data reliability, efficiency and quality
+Conduct research for industry and business questions
+Use large data sets to address business issues
+Deploy sophisticated analytics programs, machine leaning and statistical methods
+Prepare data for predictive and prescriptive modeling
+Use predictive modeling to increase and optimize customer experiences, revenue generation, ad targeting and other business outcomes.
+Find hidden patterns using data
+Use data to discover tasks that can be automated
+Deliver updates to stakeholders based on analytics
+Implementation and development of Master Data Management
+Implementation and development of Data Quality Services
+Information and data modelling by translating business processes and requirements into conceptual, logical and physical data model
+Applying solutions according to Volvo Cars and Insights architecture, standards, tools and processes
+Technology Skills
+Ability to use tools like Microsoft Azure stack, Snowflake, Wherscape, Databricks etc .
+Strong experience in SQL and programing skills in Python is value add.
+Working knowledge of common enterprise data, advanced analytics and business intelligence architecture frameworks
+Solves difficult problems with effective solutions using rigorous logic and methods
+Strong Technical Knowledge with Hands on experience
+Showing a deep interest in analytics and data science platform technologies and being curios about how these technologies can help create opportunities across the company.
+Knowledgeable in prototyping, specifying and implementing analytical ecosystems and/or logical data warehouses, including (big) data architecture, such as data lakes, streaming data analytics, etc., and full stack analytics capabilities
+Understanding of cloud- and hybrid analytical architectures.
+Information and data modelling knowledge
+Understanding of the DAMA framework.
+Specialist competence in relevant data management disciplines
+Behaviors
+Embracing an agile mindset
+Customer-Centricity and Design Thinking
+Good social and communication skills.
+Being curious, a quick learner and having a structured and analytical mind-set
+Being willing to innovate and take on new challenges.
+Being result oriented and striving for improvements.
+Positive attitude and being motivating and energizing
+Copes with change and decides well without having the total picture
+
+Who are we?
+
+Everything we do starts with people. Our purpose is to provide freedom to move, in a personal, sustainable and safe way. We are committed to simplifying our customers’ lives by offering better technology solutions that improve their impact on the world and bringing the most advanced mobility innovations to protect them, their loved ones and the people around them.
+
+Company Description
+
+Our Mission
+
+At Palo Alto Networks® everything starts and ends with our mission:
+
+Being the cybersecurity partner of choice, protecting our digital way of life. We have the vision of a world where each day is safer and more secure than the one before. These aren’t easy goals to accomplish – but we’re not here for easy. We’re here for better. We are a company built on the foundation of challenging and disrupting the way things are done, and we’re looking for innovators who are as committed to shaping the future of cybersecurity as we are.
+
+We’re changing the nature of work. Palo Alto Networks is evolving to meet the needs of our employees now and in the future through FLEXWORK, our approach to how we work. From benefits to learning, location to leadership, we’ve rethought and recreated every aspect of the employee experience at Palo Alto Networks. And because it FLEXes around each individual employee based on their individual choices, employees are empowered to push boundaries and help us all evolve, together.
+
+Job Description
+
+Your Career
+
+As part of the role you will be responsible for building and maintaining analytics dashboards with First principle design thinking. The dashboards are built with user experience as top priority, providing actionable insights and success of the product will be measured based on user adoption.
+
+Your Impact
+
+Responsible for delivering Executive dashboards end to end with actionable insights and sub sec performance
+Responsible for engaging Executives to gather requirements and use agile methodology to deliver dashboards
+Using Tableau as your primary data visualization tool
+Quick to learn new data visualization tools like Looker, Einstein Analytics etc
+Conduct deep analysis to discover actionable business insights to grow palo alto networks business top line
+Act as an Coach/Mentor for other Enterprise BI developers and influence Visualization best practices
+Develop Customer and product analytics to support Quarterly Business Reviews (QBRs), executive briefings, and other executive-level business reviews.
+Be a storyteller who can show the tell how to get business insights from the Dashboard
+
+Qualifications
+
+Your Experience
+
+Overall 5 to 10 yrs of experience in BI/UI/UX domain
+3 to 5 years of experience working with Tableau development
+Ability to create actionable dashboards, passionate about data and good data evangelist
+Strong experience in building dashboards in any of the BI Platforms
+Should have experience in writing SQL queries to understand or build dashboards
+Solve data and analytics problems using design thinking principles
+Deep knowledge and understanding of Sales, Marketing and Customer success business domains
+Excellent oral and written communications skills and ability to interact with and present to all levels of management
+Self-starter with sharp decision making skills, ability to multitask, work independently and prioritize in a fast-paced and changing environment
+Prior experience in high tech and software industries is beneficial.
+
+Additional Information
+
+Our Commitment
+
+We’re trailblazers that dream big, take risks, and challenge cybersecurity’s status quo. It’s simple: we can’t accomplish our mission without diverse teams innovating, together.
+
+We are committed to providing reasonable accommodations for all qualified individuals with a disability. If you require assistance or accommodation due to a disability or special need, please contact us at accommodations@paloaltonetworks.com.
+
+Chief Data & Analytics Office (CDAO) is looking for a multifaceted Data Engineer to help Cisco to unleash the power of data.
+
+We have a huge amount of information from Cisco's Enterprise datasets, and you will help provide data engineering and analytics solutions which will enable Cisco to be more data-driven to optimize its day to day operations and strategy.
+
+You will help make the Data threading, data clean-up and traditional & predictive analytics available and consumable in inventive new ways and help build a community of "Data Engineering & Analytics advocates” across the company to ensure adoption.
+
+Day to day that means
+
+Working with multiple sophisticated data sets to accelerate operational and strategic data-driven decision-making.
+
+Understanding the opportunities and business drivers and building insight and solutions for those through data.
+
+Opportunity to learn and apply data science tools and techniques including python, machine learning and data visualization.
+
+Continuous personal development in a multifaceted, multidisciplinary environment.
+
+Identifying and prioritizing business and technical requirements using agile methodologies.
+
+Work with a variety of product owners, scrum masters and development teams across different time zones.
+
+Who You’ll Work With
+
+This role will be collaborating closely with Engineering BU, Customer Success BU, and IT groups.
+
+Who You Are
+
+You've got experience with identifying a business problem and solving it through data driven insights.
+
+Experience in building requirements to improve data gathering for analytic purposes. Got experience to Perform, Support and Lead all aspects of Different Functional areas like Data Analysis, Data Engineering strategy, Data Warehousing, Data Integration and Report, and build the Data Visualization. We need more data SME strength to support the ongoing new use cases coming from Engineering, CX, Sales, Finance and IT business functions.
+
+Minimum Qualifications
+
+BS/MS or equivalent (Sophisticated degree preferred)
+
+7-10+ years of full-time data analytics/ engineering experience.
+
+Should have a very good hands on experience in working with ETL/ELT technologies, Cloud DB platforms (Snowflake, AWS, Google), GCP or AWS Technology Stacks, Informatica/DBT/Fivetran, SQL for Data Engineering and Data Science, and Python.
+
+Able to take a concept or an idea and work through the different stages all the way to the execution and outcome.
+
+Outstanding analytical thinking and aptitude.
+
+Hands on experience in Data Engineering/Data Migration projects.
+
+Customer Success, Customer Experience, Product Telemetry, Finance domain knowledge preferred.
+
+Familiarity with advance analytics and machine learning topics.
+
+Should have experience in storytelling with data in form of visuals.
+
+Certification in one of Cloud DB/Data Engineering/GCP/AWS Tech Stack tracks are a plus.
+
+Good written and verbal communication skills, and comfortable presenting findings to executive level audience and translating data into understandable documents.
+
+Why you'll love Cisco
+
+We change the World, you will become passionate about your employer and the brand you represent. Everything is converging on the Internet, making networked connections more meaningful than ever before in our lives. Our employees' groundbreaking ideas impact everything. Here, that means we take creative ideas from the drawing board to dynamic solutions that have real world impact.
+
+
+By combining empathy and professional expertise with digital excellence, we create launch pads for our customers to achieve global success.
+
+POSITION PURPOSE
+
+In this role, you will be collaborating with IDP’s Data Engineering and Governance, an enterprise capability team, and be responsible for the following responsibities
+
+Responsibilities
+Participate in the visualization strategy and execute to improve products, infrastructure, and processes.
+Design end-to-end Visual Analytics solutions to meet business needs in an operationally and financially efficient manner
+Ensure understandability, useability, and user-friendliness of visual analytics solutions by proa-actively implementing design best practices and challenging user-requirements.
+Work in close collaboration with the Product Managers, Data Analysts, Data Engineers, System Administrators to ensure that solution exhibits high levels of performance, security, scalability, maintainability, appropriate reusability, and reliability upon deployment
+Build, test, validate and demonstrate analytical models
+Develop reports/dashboards displaying strategic, operational, and tactical level views of various metrics
+Develop business analytics strategies, roadmaps, and BI solutions
+Remains up to date on company’s standards, industry practices and emerging standards
+Contribute to keeping Standards and best practices up to date collaborating with the community
+Promote the best practices and correct usage of standards
+Support global, Enterprise-class systems, regarding ITIL/ITSM processes/practices
+Identify areas in need of improvement and the drive to put a solution in place which addresses those needs
+Manage and prioritize multiple initiatives, incidents and service requests while adapting to changing business conditions
+Document standard operating procedures for repeatable tasks and contribute to automation efforts
+Prepare and maintain training material and SOPs, knowledge base articles and technical documentation
+Take responsibility for Outcomes
+
+You love technology, are continuously learning and extending your knowledge of best practice and the business value of technology innovations.
+
+What We're Looking For
+Bachelor’s degree in Computer Science, Information Systems, Software Engineering, or similar field
+5+ years' experience in a Data Visualization role and evidence of successful delivery of interactive visualizations
+Power BI and Tableau / Qlikview Architecture and Development
+Migration experience from one BI platform to another
+Experience in SQL is important however, Python & JavaScript is desirable
+Experience in Agile development processes and DevOps methodology / principals
+Expert in Analytics and data warehouse concepts
+Proficiency in developing visual reports, KPI scorecards, and dashboards using Power BI
+Ability to connect to data sources (internal and external), import data, and transform data
+Leverage analytical thinking for translating data into informative reports and appealing visuals
+Ability to design and develop OLLIs / KPIs
+Knowledge on building unified insights using data lens
+Expertise in advanced-level calculations on data sets
+Expertise in design methodology and implementation
+Identify bottlenecks and improve performance
+Working knowledge of Power shell or other scripting languages
+Knowledge of cloud computing (AWS / Azure)
+Certified in MS Power BI is desirable
