@@ -81,13 +81,50 @@ function processHtml(textData){
     return textData.replace(regEx,'')
 }
 
-const textExtractor = (req,res) =>{
+const textExtractor = async (req,res) =>{
     const url = req.query.url;
     // Check if data already available
-    textDatabase.find({'url':url}, (err, data)=>{
+    textDatabase.find({'url':url}, async (err, data)=>{
         //console.log(data)
+        let options = {
+            headers: { 'User-Agent': 'Mozilla/5.0 (iPad; CPU OS 11_0 like Mac OS X) AppleWebKit/604.1.34 (KHTML, like Gecko) Version/11.0 Mobile/15A5341f Safari/604.1' }
+        }
         if(err || data.length == 0){
-            request(url, getTextOnly)
+            try{
+                const siteData = await axios.get(url, options)
+
+                const textData = processHtml(siteData);
+            
+                const regex = /(?<=\s)[\w/\-\_]+(?=\s*)/g;
+            
+                const processedText = [];
+
+                var locRes = regex.exec(textData);
+            
+                while(locRes != null){
+                    processedText.push(locRes[0])
+                    locRes = regex.exec(textData)
+                }
+                
+                let joinedText = processedText.join(' ');
+        
+                const reply ={
+                    url: url,
+                    text: joinedText
+                }
+
+                if(reply){    
+                    //Registering the links and the results the database
+                    textDatabase.insert(reply)
+                    return res.status(200).json({success:true,data:reply})
+                } else {
+                    return res.status(404).json({success:false,msg:'Something went wrong in processing text'})
+                }
+            
+            } catch(error){
+                return res.status(404).json({success:false,msg:'Something went wrong in getting data'})
+            }
+            //request(url, getTextOnly)
             // res.status(404).json({success:false,msg:'Something wrong with Database'})
         } else{
             const reply ={
@@ -104,33 +141,9 @@ const textExtractor = (req,res) =>{
         // Check for errors
         if (!error && response.statusCode == 200) {
             
-            const textData = processHtml(body);
             
-            const regex = /(?<=\s)[\w/\-\_]+(?=\s*)/g;
-        
-            const processedText = [];
-
-            var locRes = regex.exec(textData);
-        
-            while(locRes != null){
-                processedText.push(locRes[0])
-                locRes = regex.exec(textData)
-            }
-            
-            let joinedText = processedText.join(' ');
-    
-            const reply ={
-                url: url,
-                text: joinedText
-            }
-
-            if(reply){    
-                //Registering the links and the results the database
-                textDatabase.insert(reply)
-                return res.status(200).json({success:true,data:reply})
-            } else {
-                return res.status(404).json({success:false,msg:'Something went wrong'})
-            }
+        } else {
+            return res.status(404).json({success:false,msg:'Something went wrong'})
         }
     }
 }

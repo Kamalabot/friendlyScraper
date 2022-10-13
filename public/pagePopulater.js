@@ -86,6 +86,7 @@ class textButton{
         parentElement.innerHTML += htmlbuilt
     }
     attachCaller(id, text, urlLink,outputId){        
+        console.log(id)
         let currentButton = document.getElementById(id);
         currentButton.addEventListener('click', function(){
             console.log(`logging from ${text}`)
@@ -93,7 +94,7 @@ class textButton{
             let outPutArea = document.getElementById(outputId)
             loadJSON(builtURL, (data)=>{
                 print(data.data)
-                outPutArea.html(data.data)
+                outPutArea.textContent = JSON.stringify(data.data)
             })
         })
     }
